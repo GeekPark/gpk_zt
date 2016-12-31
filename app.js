@@ -8,10 +8,10 @@ const __ISDEV__ = app.locals.ISDEV = app.get('env') === 'development';
 const port = process.env.PORT || '3000';
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './app/views'));
 app.set('view engine', 'pug');
 
-_.extend(app.locals, require('./helps'));
+_.extend(app.locals, require('./app/helps'));
 
 // static directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -30,7 +30,8 @@ if (__ISDEV__) {
       warnings: false,
       chunkModules: false,
       colors: true
-    }
+    },
+    publicPath: '/assets/'
   }));
   app.use(webpackHotMiddleware(compiler));
 }

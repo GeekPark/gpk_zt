@@ -3,10 +3,10 @@ const path = require('path');
 
 const config = {
   entry: {
-    app: './client/index.js'
+    app: './webpack/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './public'),
+    path: path.resolve(__dirname, './public/assets/js'),
     filename: '[name].js',
     publicPath: '/assets/',
     libraryTarget: 'umd'
