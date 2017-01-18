@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
+  context: __dirname,
   entry: {
     app: './webpack/index.js'
   },
@@ -12,20 +13,33 @@ const config = {
     libraryTarget: 'umd'
   },
   module: {
-    rules: [
+    noParse: [],
+    loaders: [
       {
         test: /\.(jsx|js)?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader?limit=25000'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css!autoprefixer',
+        include: /node_modules/
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    root: path.join(__dirname, 'webpack/'),
+    extensions: ['', '.js', '.jsx', '.json'],
     alias: []
   },
-  stats: 'normal',
   cache: false,
+  externals: {
+    jquery: 'jQuery'
+  },
   plugins: []
 };
 

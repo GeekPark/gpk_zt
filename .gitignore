@@ -2,3 +2,4 @@ node_modules
 npm-debug.log
 /public/modernizr.js
 /public/assets
+.DS_Store

@@ -20,22 +20,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-if (__ISDEV__) {
-  const webpackDevMiddleware = require('webpack-dev-middleware');
-  const webpackHotMiddleware = require('webpack-hot-middleware');
-  const webpackConfig = require('./webpack.config.dev');
-  const compiler = require('webpack')(webpackConfig);
-  app.use(webpackDevMiddleware(compiler, {
-    stats: {
-      warnings: false,
-      chunkModules: false,
-      colors: true
-    },
-    publicPath: '/assets/'
-  }));
-  app.use(webpackHotMiddleware(compiler));
-}
-
 app.listen(port, '0.0.0.0', () => {
   console.log(chalk.yellow(`Listening localhost:${port}!`));
 });

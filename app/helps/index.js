@@ -1,6 +1,5 @@
 import fs from 'fs';
 
-
 export const includeWebpackScripts = (...opt) => {
   const generateHtmlStr = key => {
     try {

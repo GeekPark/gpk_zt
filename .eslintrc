@@ -34,7 +34,8 @@
     "jsx-a11y/no-static-element-interactions": 0,
   },
   "globals": {
-    "db": true
+    "db": true,
+    "window": true
   },
     "settings": {
     "import/resolver": {

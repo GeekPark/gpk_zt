@@ -1,0 +1,16 @@
+-
+  var videos = [
+    { cover: 'http://geekpark-img.qiniudn.com/volvo1.jpg', link: 'javascript:;' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvo1.jpg', link: 'javascript:;' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvo1.jpg', link: 'javascript:;' }
+  ]
+
+section.video#video
+  +title('活动视频', 'ACTIVITY VIDEO')
+  .video-wrapper
+    .swiper-container#video-container
+      .swiper-wrapper
+        each item in videos
+          a.item.swiper-slide(href=item.link target="_blank")
+            .video-cover(style=`background-image: url(${item.cover})`)
+    .swiper-pagination.video-pagination

@@ -1,0 +1,38 @@
+@import './base';
+
+.banner {
+  padding-top: @header-h;
+
+  .picture {
+    width: 100%;
+    padding-bottom: 750 / 2480 * 100%;
+    background-image: url('/assets/images/banner.jpg');
+    background-position: center;
+    background-size: 100%;
+  }
+
+  .host {
+    padding: 22px 0;
+    overflow: hidden;
+    background-color: #0b0416;
+    text-align: center;
+
+    .item {
+      display: inline-block;
+      padding: 0 5px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .logo-tencent {
+      height: 32px;
+    }
+
+    .logo-geek {
+      height: 32px;
+      border-right: none;
+    }
+  }
+}

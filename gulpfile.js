@@ -33,9 +33,17 @@ gulp.task('images', () => {
   .pipe(livereload());
 });
 
-gulp.task('watch', () => {
-  gulp.watch('./app/assets/stylesheets/**/*.less', ['styles']);
-  gulp.watch('./app/assets/images/**/*', ['images']);
+// diff views
+gulp.task('html', () => {
+  gulp.src('./app/views/**/*')
+  .pipe(livereload());
 });
 
-gulp.task('default', ['styles', 'watch']);
+gulp.task('watch', () => {
+  livereload.listen();
+  gulp.watch('./app/assets/stylesheets/**/*.less', ['styles']);
+  gulp.watch('./app/assets/images/**/*', ['images']);
+  gulp.watch('./app/views/**/*', ['html']);
+});
+
+gulp.task('default', ['styles', 'images', 'watch']);

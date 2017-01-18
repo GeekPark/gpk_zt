@@ -1,14 +1,23 @@
 doctype html
-html(lang="cn")
+html(lang="zh-CN")
   head
     title Special
     meta(charset='utf-8')
     meta(name="renderer" content="webkit")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(content='initial-scale=1.0,maximum-scale=1.0,width=device-width,user-scalable=no' name='viewport')
+    link(rel="stylesheet" href="//cdn.bootcss.com/normalize/5.0.0/normalize.css")
     link(rel="stylesheet" href="/assets/stylesheets/index.min.css")
-    script(type='text/javascript' src="/vendor/javascripts/modernizr.js")
   body
-    h1 template
-    #container.col
+    include ./mixin/title.pug
+
+    include ./header.pug
+    include ./banner.pug
+    include ./intro.pug
+    include ./photo.pug
+    include ./video.pug
+    include ./comments.pug
+    include ./contact.pug
+    script(type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js")
+    script(type="text/javascript" src="/vendor/javascripts/modernizr.js")
     != includeWebpackScripts('app')

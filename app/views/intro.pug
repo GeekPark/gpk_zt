@@ -1,0 +1,28 @@
+-
+  var articles = [
+    { title: '2015腾讯游戏嘉年华即将火爆来袭', cover: 'http://77g0kq.com2.z0.glb.qiniucdn.com/tgcsummitpic-01.jpg', link: 'javascript:;' },
+    { title: '2015腾讯游戏嘉年华即将火爆来袭', cover: 'http://77g0kq.com2.z0.glb.qiniucdn.com/tgcsummitpic-01.jpg', link: 'javascript:;' },
+    { title: '2015腾讯游戏嘉年华即将火爆来袭', cover: 'http://77g0kq.com2.z0.glb.qiniucdn.com/tgcsummitpic-01.jpg', link: 'javascript:;' },
+    { title: '2015腾讯游戏嘉年华即将火爆来袭', cover: 'http://77g0kq.com2.z0.glb.qiniucdn.com/tgcsummitpic-01.jpg', link: 'javascript:;' },
+    { title: '2015腾讯游戏嘉年华即将火爆来袭', cover: 'http://77g0kq.com2.z0.glb.qiniucdn.com/tgcsummitpic-01.jpg', link: 'javascript:;' }
+  ]
+
+section.intro#articles
+  .container
+    .info
+      p 「游戏∞力量--TGC峰会」首次亮相，是由腾讯互动娱乐事业部联合极客公园共同打造的一场以「游戏」为基点的泛娱乐跨界探索
+      p 在这里，聆听游戏制作人、电影出品人、文学作者等大师剖析人性的精彩感悟
+      p 了解行业的最新发展动态，悉知腾讯及业内更多精品团队的幕后故事，践行属于这个时代的游戏方法论
+      p 首届「游戏∞力量--TGC峰会」将于2015年11月13-14日在上海举办
+      p.high-light 最精彩的感悟，最热门的话题尽在于此！
+    .articles
+      .swiper-container#articles-container
+        .swiper-wrapper
+          each item in articles
+            a.item.swiper-slide(href=item.link target="_blank")
+              .art-pic(style=`background-image: url(${item.cover})`)
+              .art-title
+                = item.title
+      .articles-pagination.swiper-pagination
+      .articles-button-prev.swiper-button-prev
+      .articles-button-next.swiper-button-next

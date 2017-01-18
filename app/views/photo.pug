@@ -1,0 +1,35 @@
+-
+  var photos1 = [
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' }
+  ]
+
+  var photos2 = [
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
+    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' }
+  ]
+
+section.photo#photo
+  +title('活动照片', 'ACTIVITY PHOTO')
+  .container.photo-wrapper
+    .swiper-container#photo-container
+      .swiper-wrapper
+        .swiper-slide
+          each item in photos1
+            a.geekpic
+              img(src=`${item.cover}?imageView2/1/w/1034/h/555`)
+        .swiper-slide
+          each item in photos2
+            a.geekpic
+              img(src=`${item.cover}?imageView2/1/w/1034/h/555`)
+    .photo-pagination.swiper-pagination
+    .photo-button-prev.swiper-button-prev
+    .photo-button-next.swiper-button-next

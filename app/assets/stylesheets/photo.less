@@ -1,0 +1,112 @@
+.photo {
+  position: relative;
+  background-color: #000514;
+  padding-bottom: 80px;
+
+  .module-title img {
+    max-width: 35%;
+  }
+
+  .photo-wrapper {
+    position: relative;
+  }
+
+  .swiper-container {
+    margin: 40px auto 0 auto;
+    position: relative;
+
+    .swiper-pagination {
+      color: #fff;
+    }
+
+    .swiper-wrapper {
+      cursor: move;
+
+      img {
+        width: 100%;
+      }
+
+      .swiper-slide {
+        transition: all 0.3s ease;
+
+        .geekpic {
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          .geekpic {
+            opacity: 0.5;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .geekpic {
+        width: 100% / 3 * 1;
+        float: left;
+        margin: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        line-height: 0;
+
+        &:first-child {
+          width: 100% / 3 * 2;
+          padding-left: 0;
+        }
+
+        &:nth-child(4) {
+          padding-left: 0;
+          clear: both;
+          padding-right: 5px
+        }
+
+        &:nth-child(5) {
+          padding-left: 5px;
+        }
+
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          padding-bottom: 0;
+        }
+
+        &:last-child img {
+          width: ~"calc(100% + 5px)";
+        }
+      }
+    }
+  }
+
+  .photo-button-prev {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2372757d'%2F%3E%3C%2Fsvg%3E");
+    left: -50px;
+  }
+
+  .photo-button-next {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%2372757d'%2F%3E%3C%2Fsvg%3E");
+    right: -50px;
+  }
+
+  .photo-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+      background-color: transparent;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      border: 1px solid #fff;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #fff;
+    }
+  }
+}
