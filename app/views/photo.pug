@@ -1,35 +1,39 @@
 -
-  var photos1 = [
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' }
-  ]
-
-  var photos2 = [
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' },
-    { cover: 'http://geekpark-img.qiniudn.com/volvohezhao.jpg' }
-  ]
+  var photos = [[
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-01.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-02.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-03.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-04.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-05.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-06.jpg' }
+  ],
+  [
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-07.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-08.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-09.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-10.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-11.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-12.jpg' }
+  ],
+  [
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-13.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-14.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-15.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-16.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-17.jpg' },
+    { cover: 'http://ojzh2ca6p.bkt.clouddn.com/picture-18.jpg' }
+  ]]
 
 section.photo#photo
   +title('活动照片', 'ACTIVITY PHOTO')
   .container.photo-wrapper
     .swiper-container#photo-container
       .swiper-wrapper
-        .swiper-slide
-          each item in photos1
-            a.geekpic
-              img(src=`${item.cover}?imageView2/1/w/1034/h/555`)
-        .swiper-slide
-          each item in photos2
-            a.geekpic
-              img(src=`${item.cover}?imageView2/1/w/1034/h/555`)
+        each photo in photos
+          .swiper-slide
+            each item in photo
+              a.geekpic
+                img(src=`${item.cover}?imageView2/1/w/1034/h/555`)
     .photo-pagination.swiper-pagination
     .photo-button-prev.swiper-button-prev
     .photo-button-next.swiper-button-next

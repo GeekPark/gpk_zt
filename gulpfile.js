@@ -27,9 +27,9 @@ gulp.task('styles', () => {
 
 // compress images
 gulp.task('images', () => {
-  gulp.src('./app/assets/images/**/*')
+  gulp.src('./app/assets/images/toyota/**/*')
   .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-  .pipe(gulp.dest('./public/assets/images/'))
+  .pipe(gulp.dest('./public/assets/images/toyota/'))
   .pipe(livereload());
 });
 
@@ -42,7 +42,7 @@ gulp.task('html', () => {
 gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('./app/assets/stylesheets/**/*.less', ['styles']);
-  gulp.watch('./app/assets/images/**/*', ['images']);
+  gulp.watch('./app/assets/images/toyota/**/*', ['images']);
   gulp.watch('./app/views/**/*', ['html']);
 });
 
