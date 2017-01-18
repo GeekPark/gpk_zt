@@ -47,3 +47,4 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['styles', 'images', 'watch']);
+gulp.task('build', ['styles', 'images']);
