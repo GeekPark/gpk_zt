@@ -1,6 +1,6 @@
-import fs from 'fs';
+const fs = require('fs');
 
-export const includeWebpackScripts = (...opt) => {
+exports.includeWebpackScripts = (...opt) => {
   const generateHtmlStr = key => {
     try {
       const manifest = fs.readFileSync('public/assets/js/webpack_manifest.json');

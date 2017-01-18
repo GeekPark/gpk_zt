@@ -1,7 +1,7 @@
-import express from 'express';
-import path from 'path';
-import chalk from 'chalk';
-import _ from 'lodash';
+const express = require('express');
+const path = require('path');
+const chalk = require('chalk');
+const _ = require('lodash');
 
 const app = express();
 const __ISDEV__ = app.locals.ISDEV = app.get('env') === 'development';

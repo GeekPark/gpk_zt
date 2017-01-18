@@ -4,7 +4,6 @@ import Swiper from 'swiper';
 import '@geekpark/navsync';
 import 'swiper/dist/css/swiper.min.css';
 
-console.log($);
 const __ISDEV__ = process.env.NODE_ENV === 'development';
 const init = () => {
   if (__ISDEV__ && isMobileUA()) require('eruda').init();
