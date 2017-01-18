@@ -1,0 +1,41 @@
+{
+  /**
+   * Application configuration section
+   * http://pm2.keymetrics.io/docs/usage/application-declaration/
+   */
+  apps : [
+
+    // First application
+    {
+      name      : "gpk_zt",
+      script    : "./app.js",
+      env: {
+        COMMON_VARIABLE: "true"
+      },
+      env_production : {
+        NODE_ENV: "production"
+      }
+    },
+
+    // Second application
+    {
+      name      : "WEB",
+      script    : "web.js"
+    }
+  ],
+
+  /**
+   * Deployment section
+   * http://pm2.keymetrics.io/docs/usage/deployment/
+   */
+  deploy : {
+    production : {
+      user : "cedcn",
+      host : "45.76.196.27",
+      ref  : "origin/master",
+      repo : "git@git.coding.net:cedcn/gpk_zt.git",
+      path : "~",
+      "post-deploy" : "yarn install && pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}
