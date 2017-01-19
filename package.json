@@ -11,7 +11,8 @@
     "modernizr": "modernizr -c ./config/modernizr-config.json -d ./public/vendor/javascripts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js --inline",
-    "build": "gulp build && webpack -p --config webpack.config.prod.js "
+    "build": "gulp build && webpack -p --config webpack.config.prod.js",
+    "deploy": "pm2 deploy ecosystem.json production"
   },
   "author": "",
   "license": "ISC",
