@@ -16,7 +16,7 @@ _.extend(app.locals, require('./app/helps'));
 // static directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
+app.get('/toyota', (req, res) => {
   res.render('index');
 });
 
