@@ -20,6 +20,7 @@
     .item {
       display: inline-block;
       padding: 0 5px;
+      height: 32px;
 
       img {
         height: 100%;
@@ -27,12 +28,28 @@
     }
 
     .logo-tencent {
-      height: 32px;
     }
 
     .logo-geek {
-      height: 32px;
       border-right: none;
+    }
+  }
+}
+
+
+@media screen and (max-width: 750px) {
+  .banner {
+    .picture {
+      width: 100%;
+      padding-bottom: 750 / 889 * 100%;
+      background-image: url('/assets/images/toyota/banner-mobile.jpg');
+      background-position: center;
+      background-size: 100%;
+    }
+
+    .host .item {
+      height: 25px;
+      padding: 0;
     }
   }
 }
