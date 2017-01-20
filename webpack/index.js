@@ -39,19 +39,22 @@ $(() => {
     spaceBetween: isMobileView() ? 0 : 60
   });
 
-  // 导航
-  const $header = $('#site-header');
-  const $nav = $header.find('.nav');
-  const $button = $header.find('.button');
-  $button.on('click', function () {
-    $(this).toggleClass('closed');
-    $nav.toggleClass('show');
-  });
+  if (isMobileView()) {
+    // 导航
+    const $header = $('.header');
+    const $nav = $header.find('.nav');
+    const $button = $header.find('.button');
 
-  $header.find('.nav-item').on('click', function () {
-    $button.toggleClass('closed');
-    $nav.toggleClass('show');
-  });
+    $button.on('mousedown', function () {
+      $(this).toggleClass('closed');
+      $nav.toggleClass('show');
+    });
+
+    $header.find('.nav-item').on('mousedown', function () {
+      $button.toggleClass('closed');
+      $nav.removeClass('show');
+    });
+  }
 });
 
 window.onload = () => {
